@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disconnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+        }
+        .article-content h2 {
+            font-size: 1.875rem; /* 30px */
+            line-height: 2.25rem; /* 36px */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .article-content p {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="border-b border-gray-200 py-6 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold text-center tracking-tighter">
+                <a href="#" onclick="showHomePage(event)">disconnect</a>
+            </h1>
+            <p class="text-center text-gray-500 mt-1">Ideas & Culture</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Articles will be dynamically injected here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 py-6 border-t border-gray-200">
+        <div class="text-center text-gray-500">
+            <p>&copy; 2024 disconnect. All Rights Reserved.</p>
+            <p class="text-sm mt-1">A space for contemplation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===================================================================================
+        // YOUR ARTICLES DATABASE
+        // To add a new article, copy one of the blocks below (from { to }),
+        // paste it at the top of the list, and change the details.
+        // - id: Must be a unique number. Just increment the last one.
+        // - title: The title of your article.
+        // - author: Your name.
+        // - date: The publication date.
+        // - image: URL of the header image. You can use a site like https://unsplash.com for free images.
+        // - summary: A short teaser shown on the homepage.
+        // - content: The full article text. You can use <p> for paragraphs and <h2> for subheadings.
+        // ===================================================================================
+        const articles = [
+            {
+                id: 3,
+                title: "On the Nature of Solitude",
+                author: "Jane Doe",
+                date: "August 05, 2025",
+                image: "https://images.unsplash.com/photo-1519074002996-a69e7ac46a42?q=80&w=1974&auto=format&fit=crop",
+                summary: "In an age of constant connection, what does it mean to be truly alone? Exploring the difference between loneliness and chosen solitude.",
+                content: `
+                    <p>The modern world is a symphony of noise, a constant barrage of notifications, updates, and demands for our attention. We are more connected than ever, yet many report feeling profoundly isolated. This paradox invites us to reconsider the nature of being alone. Is it a state to be feared and avoided at all costs, or can it be a source of strength, creativity, and self-discovery?</p>
+                    <h2>The Fear of the Void</h2>
+                    <p>Loneliness is a painful, involuntary state of isolation. It's the feeling of being disconnected from others when you crave connection. Solitude, on the other hand, is a choice. It is the deliberate act of stepping away from the social world to be with oneself. Our culture often conflates the two, treating any time spent alone as a symptom of social failure. We fear the silence, the absence of external validation, the confrontation with our own thoughts.</p>
+                    <h2>The Power of Disconnection</h2>
+                    <p>Yet, it is in this chosen solitude that we can find our deepest connections—to ourselves. By disconnecting from the external, we create space to listen to our internal world. It is in these quiet moments that ideas are born, emotions are processed, and a true sense of self is cultivated. Great thinkers, artists, and innovators throughout history have cherished their time alone, recognizing it not as an absence, but as a presence of something vital.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "The Illusion of Political Certainty",
+                author: "John Smith",
+                date: "July 28, 2025",
+                image: "https://images.unsplash.com/photo-1523287337969-6214a383d0ea?q=80&w=2070&auto=format&fit=crop",
+                summary: "Why we cling to our political beliefs so tightly and the cognitive biases that prevent us from seeing the other side.",
+                content: `
+                    <p>In today's polarized landscape, political discourse often resembles a battlefield more than a debate. We hold our beliefs not as hypotheses to be tested, but as core components of our identity. To question them is to question ourselves. This fierce attachment to our political views is not a sign of intellectual rigor, but often a product of deep-seated cognitive biases.</p>
+                    <h2>Confirmation Bias: The Echo Chamber of the Mind</h2>
+                    <p>The most powerful of these is confirmation bias—our tendency to seek out, interpret, and recall information that confirms our pre-existing beliefs. We surround ourselves with news sources, social media feeds, and friends who reflect our own views, creating an echo chamber that reinforces our certainty. Dissenting opinions are not just disagreed with; they are often dismissed as misinformed, malicious, or immoral.</p>
+                    <p>Breaking free from this illusion requires intellectual humility. It demands that we actively seek out opposing viewpoints, not to find flaws, but to understand their internal logic. It means accepting that our own perspective is incomplete and that there may be value in ideas that make us uncomfortable. True understanding is not found in the comfort of certainty, but in the challenging, messy, and ultimately rewarding space of open inquiry.</p>
+                `
+            },
+            {
+                id: 1,
+                title: "What We Talk About When We Talk About a 'Good Life'",
+                author: "Alex Johnson",
+                date: "July 15, 2025",
+                image: "https://images.unsplash.com/photo-1494783367193-149034c05e8f?q=80&w=2070&auto=format&fit=crop",
+                summary: "Beyond wealth and success, what are the fundamental components of a life well-lived? A look at ancient wisdom and modern psychology.",
+                content: `
+                    <p>The question of what constitutes a 'good life' has been at the heart of philosophical inquiry for millennia. From Aristotle's 'eudaimonia' to the Stoics' emphasis on virtue, ancient thinkers offered frameworks for human flourishing that had little to do with material wealth or social status. Today, modern psychology is beginning to validate this ancient wisdom, pointing towards a set of universal ingredients for a fulfilling existence.</p>
+                    <h2>Meaning and Purpose</h2>
+                    <p>Perhaps the most crucial component is a sense of meaning and purpose. This is the feeling that your life matters, that you are part of something larger than yourself. It can be found in career, family, creativity, spirituality, or community. Without a 'why,' the 'how' of daily life can feel empty and rudderless.</p>
+                    <h2>Quality Relationships</h2>
+                    <p>Another cornerstone is the presence of deep, authentic relationships. Studies consistently show that the strongest predictor of long-term happiness is the quality of our social connections. These are the bonds that provide support in difficult times and shared joy in good times. They are the bedrock upon which a resilient and satisfying life is built.</p>
+                `
+            }
+        ];
+
+        const mainContent = document.getElementById('main-content');
+
+        // Function to render the home page with all article cards
+        function showHomePage(event) {
+            if (event) event.preventDefault();
+            window.location.hash = '';
+            mainContent.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    ${articles.map(article => `
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <a href="#${article.id}" onclick="showArticlePage(${article.id})">
+                                <img src="${article.image}" alt="Image for ${article.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Image';">
+                                <div class="p-6">
+                                    <h2 class="text-2xl font-bold mb-2">${article.title}</h2>
+                                    <p class="text-gray-600 mb-4">${article.summary}</p>
+                                    <div class="text-sm text-gray-500">
+                                        <span>By ${article.author}</span> &middot; <span>${article.date}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Function to render a single article page
+        function showArticlePage(id) {
+            const article = articles.find(a => a.id === id);
+            if (!article) {
+                showHomePage(); // If article not found, go home
+                return;
+            }
+
+            mainContent.innerHTML = `
+                <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 lg:p-12 rounded-lg shadow-lg">
+                    <a href="#" onclick="showHomePage(event)" class="text-blue-600 hover:underline mb-8 inline-block">&larr; Back to all articles</a>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">${article.title}</h1>
+                    <div class="text-gray-500 mb-8">
+                        <span>By ${article.author}</span> &middot; <span>${article.date}</span>
+                    </div>
+                    <img src="${article.image}" alt="Header image for ${article.title}" class="w-full rounded-lg mb-8" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/e2e8f0/333?text=Image';">
+                    <div class="article-content">
+                        ${article.content}
+                    </div>
+                </div>
+            `;
+            window.scrollTo(0, 0);
+        }
+        
+        // Simple router to handle page loads and hash changes
+        function router() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const articleId = parseInt(hash, 10);
+                showArticlePage(articleId);
+            } else {
+                showHomePage();
+            }
+        }
+
+        // Listen for hash changes (e.g., browser back/forward buttons)
+        window.addEventListener('hashchange', router);
+
+        // Initial page load
+        document.addEventListener('DOMContentLoaded', router);
+
+    </script>
+</body>
+</html>
