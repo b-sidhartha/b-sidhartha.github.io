@@ -6,7 +6,7 @@
 // 1. Copy one of the blocks below (from the opening { to the closing }, ).
 // 2. Paste it at the VERY TOP of the list, right after the `const articles = [` line.
 // 3. Update the details for your new article.
-//    - url: The path to your new HTML file (e.g., "articles/article-3.html").
+//    - url: The path to your new article's FOLDER (e.g., "articles/my-new-article/").
 //    - image: The link to your cover image.
 //    - title: The title of your article.
 //    - author: Your name.
@@ -16,7 +16,7 @@
 
 const articles = [
     {
-        url: "articles/article-2.html",
+        url: "articles/indians-dont-deserve-freedom/",
         image: "https://www.billabonghighschool.com/blogs/wp-content/uploads/2024/06/Freedom-Fighters-of-India-Heroes-Who-Fought-for-the-Nation.jpg",
         title: "INDIANS DONT DESERVE FREEDOM",
         author: "sidhartha",
@@ -24,7 +24,7 @@ const articles = [
         summary: "We are used to being exploited by anyone who has power and control. It is like generations passed and everyone was okay with the exploitation."
     },
     {
-        url: "articles/article-1.html",
+        url: "articles/the-first-step/",
         image: "https://dariusforoux.com/wp-content/uploads/2018/10/one-step-at-a-time.png",
         title: "THE FIRST STEP",
         author: "sidhartha",
