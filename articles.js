@@ -16,6 +16,14 @@
 
 const articles = [
     {
+        url: "articles/the-reality-of-pesticides-a-telangana-story/",
+        image: "https://cdn.thewire.in/wp-content/uploads/2018/10/20100118/telangana-farmer-pesticide-spraying-1024x683.jpg",
+        title: "The Reality of Pesticides: A Telangana Story",
+        author: "sidhartha",
+        date: "August 13, 2025",
+        summary: "Agrochemicals started as a solution to India’s food crisis, but today their use looks more like an obsession than a necessity."
+    },
+    {
         url: "articles/indians-dont-deserve-freedom/",
         image: "https://www.billabonghighschool.com/blogs/wp-content/uploads/2024/06/Freedom-Fighters-of-India-Heroes-Who-Fought-for-the-Nation.jpg",
         title: "INDIANS DONT DESERVE FREEDOM",
