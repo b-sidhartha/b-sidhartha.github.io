@@ -20,7 +20,7 @@ const articles = [
         image: "https://cdn.thewire.in/wp-content/uploads/2018/10/20100118/telangana-farmer-pesticide-spraying-1024x683.jpg",
         title: "The Reality of Pesticides: A Telangana Story",
         author: "sidhartha",
-        date: "August 13, 2025",
+        date: "August 21, 2025",
         summary: "Agrochemicals started as a solution to India’s food crisis, but today their use looks more like an obsession than a necessity."
     },
     {
