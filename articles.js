@@ -27,7 +27,7 @@ const articles = [
         url: "articles/indians-dont-deserve-freedom/",
         image: "https://www.billabonghighschool.com/blogs/wp-content/uploads/2024/06/Freedom-Fighters-of-India-Heroes-Who-Fought-for-the-Nation.jpg",
         title: "INDIANS DONT DESERVE FREEDOM",
-        author: "sidhartha",
+        author: "sidhartha b",
         date: "August 12, 2025",
         summary: "We are used to being exploited by anyone who has power and control. It is like generations passed and everyone was okay with the exploitation."
     },
